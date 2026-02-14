@@ -362,7 +362,7 @@ elif menu == "💳 Paiements":
                     # Déterminer le statut
                     if paiement['montant_paye'] >= paiement['montant_du']:
                         if paiement['montant_paye'] > paiement['montant_du']:
-                            statut = "💰 Excédentaire"
+                            statut = "💰 En plus"
                             couleur = "blue"
                         else:
                             statut = "✅ Complet"
@@ -740,7 +740,7 @@ elif menu == "📈 Rapports":
                 
                 for idx, row in top_payeurs.iterrows():
                     if row['Différence'] > 0:
-                        st.success(f"🌟 {row['Nom']} - Payé: {row['Total Payé']:.2f} DA (Excédent: +{row['Différence']:.2f} DA)")
+                        st.success(f"🌟 {row['Nom']} - Payé: {row['Total Payé']:.2f} DA (En plus: +{row['Différence']:.2f} DA)")
                     else:
                         st.info(f"✅ {row['Nom']} - Payé: {row['Total Payé']:.2f} DA")
             
@@ -789,3 +789,4 @@ st.sidebar.info("💾 Mohamed.reda.hama@gmail.com")
 #   spreadsheet_url = f"https://docs.google.com/spreadsheets/d/{st.session_state.spreadsheet.id}"
 
 #    st.sidebar.markdown(f"[📊 Ouvrir Google Sheet]({spreadsheet_url})")
+
