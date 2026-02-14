@@ -388,7 +388,7 @@ elif menu == "💳 Paiements":
                             
                             if paiement['montant_paye'] > paiement['montant_du']:
                                 excedent = paiement['montant_paye'] - paiement['montant_du']
-                                st.info(f"Excédent: +{excedent} DA")
+                                st.info(f"En plus: +{excedent} DA")
                             elif paiement['montant_paye'] < paiement['montant_du']:
                                 reste = paiement['montant_du'] - paiement['montant_paye']
                                 st.warning(f"Reste à payer: {reste} DA")
@@ -686,7 +686,7 @@ elif menu == "📈 Rapports":
                         if total_paye_voisin >= cotisation['montant']:
                             if total_paye_voisin > cotisation['montant']:
                                 excedent = total_paye_voisin - cotisation['montant']
-                                statut = f"💰 Payé avec excédent (+{excedent:.2f} DA)"
+                                statut = f"💰 Payé en plus (+{excedent:.2f} DA)"
                             else:
                                 statut = "✅ Payé complet"
                             
@@ -787,4 +787,5 @@ st.sidebar.markdown("---")
 st.sidebar.info("💾 Mohamed.reda.hama@gmail.com")
 #if st.session_state.spreadsheet:
 #   spreadsheet_url = f"https://docs.google.com/spreadsheets/d/{st.session_state.spreadsheet.id}"
+
 #    st.sidebar.markdown(f"[📊 Ouvrir Google Sheet]({spreadsheet_url})")
